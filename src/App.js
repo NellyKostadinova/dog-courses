@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Video from './components/Video';
+import Sidebar from './components/Sidebar';
+import course from './data/sexier-than-a-squirrel.json';
 import './App.css';
 
 function App() {
+  const [lesson, setLesson] = useState(course.lessons[0]);
+
+  function getSidebarLinks() {
+    const sidebarLinks = course.lessons.map(lesson => {
+      return {
+        id: lesson.id,
+        title: lesson.title
+      }
+    });
+
+    return sidebarLinks;
+  }
+
+  function handleLessonChange(id) {
+    const _lesson = course.lessons.find(lesson => lesson.id === id);
+    setLesson(_lesson);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar linklist={getSidebarLinks()} currentLesson={lesson.id} courseName="Sexier Than a Squirrel" linkClick={handleLessonChange} />
+      <div className='lesson'>
+        <h1>{lesson.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: lesson.body }}></div>
+        {
+          lesson.videos.map(link => {
+            return <Video link={link} key={link} />
+          })
+        }
+      </div>
     </div>
   );
 }

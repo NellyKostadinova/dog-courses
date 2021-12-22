@@ -1,0 +1,28 @@
+.sidebar {
+  width: 100%;
+  max-width: 400px;
+  min-width: 300px;
+  margin-top: 2em;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar button {
+  appearance: none;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar button.active {
+  background-color: rgb(110, 134, 63);
+  color: white;
+}
