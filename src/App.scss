@@ -1,14 +1,18 @@
 .App {
   display: flex;
   max-width: 80%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .lesson {
   margin-left: 100px;
+
+  img {
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .App {
     max-width: 90%;
   }
@@ -18,12 +22,20 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .App {
     flex-direction: column;
   }
 
   .lesson {
     margin-left: 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  .App {
+    max-width: 100%;
+    margin: 15px;
+    margin-bottom: 75px;
   }
 }

@@ -1,41 +1,45 @@
 import { useState } from 'react';
-import Video from './components/Video';
-import Sidebar from './components/Sidebar';
-import course from './data/sexier-than-a-squirrel.json';
-import './App.css';
+import STAS from './data/sexier-than-a-squirrel.json';
+import TOTS from './data/taming-of-the-shrew.json';
+import BASICS from './data/basics.json';
+import './App.scss';
+import Course from './components/Course';
+import CoursesGrid from './components/CoursesGrid';
+import Header from './components/Header';
+
+const getCourse = (id) => {
+  switch (id) {
+    case 'stas':
+      return STAS;
+    case 'tots':
+      return TOTS;
+    case 'basics':
+      return BASICS;
+    default:
+      return undefined;
+  }
+}
 
 function App() {
-  const [lesson, setLesson] = useState(course.lessons[0]);
+  const [course, setCourse] = useState(getCourse(undefined));
 
-  function getSidebarLinks() {
-    const sidebarLinks = course.lessons.map(lesson => {
-      return {
-        id: lesson.id,
-        title: lesson.title
-      }
-    });
 
-    return sidebarLinks;
-  }
-
-  function handleLessonChange(id) {
-    const _lesson = course.lessons.find(lesson => lesson.id === id);
-    setLesson(_lesson);
+  function handleCourseChange(id) {
+    const _course = getCourse(id);
+    setCourse(_course);
   }
 
   return (
-    <div className="App">
-      <Sidebar linklist={getSidebarLinks()} currentLesson={lesson.id} courseName="Sexier Than a Squirrel" linkClick={handleLessonChange} />
-      <div className='lesson'>
-        <h1>{lesson.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: lesson.body }}></div>
+    <>
+      <Header handleClick={handleCourseChange} />
+      <div className="App">
         {
-          lesson.videos.map(link => {
-            return <Video link={link} key={link} />
-          })
+          course
+            ? <Course course={course} />
+            : <CoursesGrid handleClick={handleCourseChange} />
         }
       </div>
-    </div>
+    </>
   );
 }
 

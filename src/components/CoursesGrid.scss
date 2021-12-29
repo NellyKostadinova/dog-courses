@@ -1,0 +1,54 @@
+.courses-grid {
+  width: 100%;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    li {
+      border: 1px solid black;
+      cursor: pointer;
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  h4 {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .course-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    @media (max-width: 576px) {
+      height: 200px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
