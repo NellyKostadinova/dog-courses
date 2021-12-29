@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dog-courses/static/css/main.2d56443f.css",
-    "main.js": "/dog-courses/static/js/main.f9a74448.js",
+    "main.css": "/dog-courses/static/css/main.b608d381.css",
+    "main.js": "/dog-courses/static/js/main.e008a1a7.js",
     "static/js/787.b2152e14.chunk.js": "/dog-courses/static/js/787.b2152e14.chunk.js",
     "index.html": "/dog-courses/index.html",
-    "main.2d56443f.css.map": "/dog-courses/static/css/main.2d56443f.css.map",
-    "main.f9a74448.js.map": "/dog-courses/static/js/main.f9a74448.js.map",
+    "main.b608d381.css.map": "/dog-courses/static/css/main.b608d381.css.map",
+    "main.e008a1a7.js.map": "/dog-courses/static/js/main.e008a1a7.js.map",
     "787.b2152e14.chunk.js.map": "/dog-courses/static/js/787.b2152e14.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d56443f.css",
-    "static/js/main.f9a74448.js"
+    "static/css/main.b608d381.css",
+    "static/js/main.e008a1a7.js"
   ]
 }
