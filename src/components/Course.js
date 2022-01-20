@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import Video from './Video';
 import Sidebar from './Sidebar';
-// import course from './data/sexier-than-a-squirrel.json';
-// import './App.scss';
 
 function Course({ course }) {
   const [lesson, setLesson] = useState(course.lessons[0]);

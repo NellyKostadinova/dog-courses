@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import STAS from './data/sexier-than-a-squirrel.json';
 import TOTS from './data/taming-of-the-shrew.json';
+import GBE from './data/good-bad-evil.json';
 import BASICS from './data/basics.json';
 import './App.scss';
 import Course from './components/Course';
@@ -9,6 +10,8 @@ import Header from './components/Header';
 
 const getCourse = (id) => {
   switch (id) {
+    case 'gbe':
+      return GBE;
     case 'stas':
       return STAS;
     case 'tots':
